@@ -1,15 +1,12 @@
 ﻿using Bookify.Domain.Apartments;
 using Bookify.Domain.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bookify.Domain.Bookings
 {
-    public class PricingService
+	/*
+	 * Recap: Domain service
+	 */
+	public class PricingService
 	{
 		public PricingDetails CalculatePrice(Apartment apartment, DateRange period)
 		{
@@ -20,7 +17,7 @@ namespace Bookify.Domain.Bookings
 				currency);
 
 			decimal percentageUpCharge = 0;
-			foreach(var amenity in apartment.Amenities)
+			foreach (var amenity in apartment.Amenities)
 			{
 				percentageUpCharge += amenity switch
 				{
@@ -32,7 +29,7 @@ namespace Bookify.Domain.Bookings
 			}
 
 			var amenitiesUpCharge = Money.Zero();
-			if(percentageUpCharge > 0)
+			if (percentageUpCharge > 0)
 			{
 				amenitiesUpCharge = new Money(
 					priceForPeriod.Amount * percentageUpCharge,

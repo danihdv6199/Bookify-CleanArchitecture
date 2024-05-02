@@ -1,0 +1,7 @@
+What's inside the application layer:
+- Use cases = CQRS + MeditR (Decorator pattern => middleware)
+- Cross-cutting concerns
+	- Logging
+	- Validation
+- Exceptions
+- Dependency Injections configuration

@@ -1,0 +1,8 @@
+What's inside the domain layer:
+- Entities -> It's an object in the domain that satifies that has an identity (something that tell me that is a specific object) and can evolve and change over time
+- Value objects -> It's identified by its values
+- Domain events -> With mediator
+- Domain services.
+- Interfaces.
+- Exceptions.
+- Enums

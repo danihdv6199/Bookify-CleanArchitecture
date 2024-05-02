@@ -1,5 +1,4 @@
 ﻿using Bookify.Domain.Abstractions;
-using System;
 namespace Bookify.Domain.Bookings
 {
 	public static class BookingErrors
@@ -9,15 +8,15 @@ namespace Bookify.Domain.Bookings
 			"The bookin with the specified identifier was not found");
 		public static Error OverLap = new(
 			"Booking.Overlap",
-			"The bookin with the specified identifier was not found");
+			"The currentbooking is overlapping with an existing one");
 		public static Error NotReserved = new(
 			"Booking.NotReserved",
-			"The bookin with the specified identifier was not found");
+			"the booking is not pending");
 		public static Error NotConfirmed = new(
 			"Booking.NotConfirmed",
-			"The bookin with the specified identifier was not found");
+			"The bookin is not confirmed");
 		public static Error AlreadyStarted = new(
 			"Booking.AlreadyStarted",
-			"The bookin with the specified identifier was not found");
+			"The bookin has already started");
 	}
 }

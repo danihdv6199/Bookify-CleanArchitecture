@@ -2,18 +2,14 @@
 using Bookify.Domain.Apartments;
 using Bookify.Domain.Bookings.Events;
 using Bookify.Domain.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bookify.Domain.Bookings
 {
-    public sealed class Booking : Entity
+	public sealed class Booking : Entity
 	{
-		public Booking(
+		private Booking() { }
+
+		private Booking(
 			Guid id,
 			Guid aparmentId,
 			Guid userId,
@@ -77,12 +73,12 @@ namespace Bookify.Domain.Bookings
 
 			apartment.LastBookedOnUtc = utcNow;
 
-			return booking;	
+			return booking;
 		}
 
 		public Result Confirm(DateTime utcNow)
 		{
-			if(Status != BookingStatus.Reserved)
+			if (Status != BookingStatus.Reserved)
 			{
 				return Result.Failure(BookingErrors.NotReserved);
 			}
@@ -134,7 +130,7 @@ namespace Bookify.Domain.Bookings
 
 			var CurrentDate = DateOnly.FromDateTime(utcNow);
 
-			if(CurrentDate > Duration.Start)
+			if (CurrentDate > Duration.Start)
 			{
 				return Result.Failure(BookingErrors.AlreadyStarted);
 			}

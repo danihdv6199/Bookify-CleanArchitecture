@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bookify.Domain.Bookings
+﻿namespace Bookify.Domain.Bookings
 {
 	public record DateRange
 	{
@@ -15,7 +9,7 @@ namespace Bookify.Domain.Bookings
 
 		public static DateRange Create(DateOnly start, DateOnly end)
 		{
-			if(start > end)
+			if (start > end)
 			{
 				throw new ApplicationException("Enda date precedes star date");
 			}

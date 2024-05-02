@@ -1,0 +1,7 @@
+What's inside the infrastructure layer:
+- EF Core:
+	- DbContext
+	- Entity Configurations
+	- Repositories
+- Optimistic concurrency
+- Publishing Domain events
